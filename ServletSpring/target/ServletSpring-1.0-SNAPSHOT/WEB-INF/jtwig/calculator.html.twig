@@ -1,0 +1,25 @@
+{% extends "toolbar.html.twig" %}
+
+{% block scripts %}
+<!-- Меню navbar -->
+<div id="calculator">
+    <form name="calculator" method="post" action="/calc">
+        <input type="text" name="value1" size="20" maxlength="9">
+        <select name="operation" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name="value2" maxlength="9" size="20">
+        <br>
+        <br>
+        <input name="calculate" type="submit" value="result">
+    </form>
+    {{result}}
+    <div id="error">
+        {{error}}
+
+    </div>
+</div>
+{% endblock %}
